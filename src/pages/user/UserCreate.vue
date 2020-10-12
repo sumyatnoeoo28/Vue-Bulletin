@@ -11,7 +11,15 @@
                     </v-text-field>
                 </div>
                 <div class="login-input">
-                    <v-text-field v-model="email" type="text" label="Email" :rules="emailRules" hide-details="auto">
+                    <v-text-field v-model="email" type="email" label="Email" :rules="emailRules" hide-details="auto">
+                    </v-text-field>
+                </div>
+                <div class="login-input">
+                    <v-text-field v-model="password" type="password" label="Password" :rules="pwdRules" hide-details="auto">
+                    </v-text-field>
+                </div>
+                <div class="login-input">
+                    <v-text-field v-model="confirm_password" type="password" label="Confirm Password" :rules="confirmpwRules" hide-details="auto">
                     </v-text-field>
                 </div>
                 <div class="login-input">

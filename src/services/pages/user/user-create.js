@@ -3,6 +3,8 @@ export default {
     data: () => ({
         name: "",
         email: "",
+        password: "",
+        confirm_password: "",
         phone: "",
         address: "",
         dob: "",
@@ -16,6 +18,17 @@ export default {
         emailRules: [
             value => !!value || "The email field is required.",
             value => /.+@.+\..+/.test(value) || "E-mail must be valid."
+        ],
+        // validation rules for password.
+        pwdRules: [
+            value => !!value || "The password field is required.",
+            value => value.length >= 8 || "Please Fill at least 8 characters."
+        ],
+        // validation rules for confirm password.
+        confirmpwRules: [
+            value => !!value || "The confirm password field is required.",
+            value => value.length >= 8 || "Please Fill at least 8 characters.",
+            value => value.password != value.confirm_password || "Password must match."
         ],
         // validation rules for user phone.
         phoneRules: [
@@ -49,6 +62,7 @@ export default {
             const userList = {
                 name: this.name,
                 email: this.email,
+                password: this.password,
                 phone: this.phone,
                 address: this.address,
                 dob: this.dob

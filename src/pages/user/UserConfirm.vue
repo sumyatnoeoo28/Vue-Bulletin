@@ -21,6 +21,14 @@
                 </v-row>
                 <v-row>
                     <v-col cols="4">
+                        <v-subheader>Password</v-subheader>
+                    </v-col>
+                    <v-col cols="8">
+                        <v-subheader>{{ createUser.password }}</v-subheader>
+                    </v-col>
+                </v-row>
+                <v-row>
+                    <v-col cols="4">
                         <v-subheader>Phone</v-subheader>
                     </v-col>
                     <v-col cols="8">

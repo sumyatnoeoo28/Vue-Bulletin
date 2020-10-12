@@ -3,6 +3,7 @@ export default {
     data: () => ({
         name: "",
         email: "",
+        password: "",
         phone: "",
         address: "",
         dob: "",
