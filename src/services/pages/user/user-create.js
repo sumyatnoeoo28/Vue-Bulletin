@@ -8,6 +8,7 @@ export default {
         phone: "",
         address: "",
         dob: "",
+        profile_path: "",
         error: "",
         valid: true,
         // validation rules for user name.
@@ -28,7 +29,7 @@ export default {
         confirmpwRules: [
             value => !!value || "The confirm password field is required.",
             value => value.length >= 8 || "Please Fill at least 8 characters.",
-            value => value.password != value.confirm_password || "Password must match."
+            value => value.password === value.confirm_password || "Password must match."
         ],
         // validation rules for user phone.
         phoneRules: [
@@ -41,7 +42,11 @@ export default {
         // validation rules for user dob.
         dobRules: [
             value => !!value || "The dob field is required.",
-        ]
+        ],
+        profileRules: [
+            value => !value || value.size < 2000000 || 'Avatar size should be less than 2 MB!',
+        ],
+        showList: []
     }),
     computed: {
         ...mapGetters(["isLoggedIn"])
@@ -65,10 +70,26 @@ export default {
                 password: this.password,
                 phone: this.phone,
                 address: this.address,
-                dob: this.dob
+                dob: this.dob,
+                profile_path: this.showList
             };
             this.$store.commit("setCreateUser", userList);
             this.$router.push({ name: "user-confirm" });
+        },
+        saveProfilePicture(profile_path) {
+            var dataURL = URL.createObjectURL(profile_path);
+            var output = document.getElementById('output');
+            output.src = dataURL;
+            console.log(dataURL);
+            this.$axios
+                .post("/save/profile_picture" , profile_path)
+                .then((response) => {
+                    this.showList = "./../../../mock/target/" + response.data.profile_path;
+                    console.log(this.showList);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         }
     },
 };

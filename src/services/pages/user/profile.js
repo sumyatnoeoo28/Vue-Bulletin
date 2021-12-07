@@ -37,8 +37,12 @@ export default {
         showList: []
     }),
     props: ["data"],
+    created() {
+        this.id = this.$route.params.data;
+    },
     beforeMount() {
         this.getUser();
+        this.getUserProfile(this.id);
     },
     methods: {
         /**
@@ -64,6 +68,18 @@ export default {
                 .catch((err) => {
                     console.log(err);
                 });
+        },
+        getUserProfile(id) {
+            console.log(id);
+            this.$axios
+            .get("/get/avator/" + id)
+            .then((response) => {
+                this.profile_path = response.data;
+               console.log(response.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
         }
     }
 };

@@ -6,6 +6,8 @@
         <v-form ref="profile" v-model="valid">
             <v-card-text>
                 <div class="login-error">{{error}}</div>
+                <v-text-field v-model="profile_path" type="text" label="PROFILE PATH" :rules="nameRules"
+                hide-details="auto"></v-text-field>
                 <div class="login-input">
                     <v-text-field v-model="showList.name" type="text" label="User Name" :rules="nameRules"
                         hide-details="auto"></v-text-field>
@@ -13,10 +15,6 @@
                 <div class="login-input">
                     <v-text-field v-model="showList.email" type="text" label="Email" :rules="emailRules"
                         hide-details="auto"></v-text-field>
-                </div>
-                <div class="login-input">
-                    <v-text-field v-model="showList.profile_path" type="text" label="Profile Path"
-                        :rules="profilepathRules" hide-details="auto"></v-text-field>
                 </div>
                 <div class="login-input">
                     <v-text-field v-model="showList.phone" type="text" label="Phone" :rules="phoneRules"
@@ -34,9 +32,9 @@
             <v-card-actions>
                 <div class="login-action">
                     <v-spacer></v-spacer>
-                    <v-btn type="submit" :disabled="!valid" large color="primary" class="mr-4">
+                    <v-btn type="submit" :disabled="!valid" large color="light-blue lighten-5" class="mr-4">
                         Update</v-btn>
-                    <v-btn large color="primary" @click="cancelUser">Cancel</v-btn>
+                    <v-btn large color="deep-orange accent-4" @click="cancelUser">Cancel</v-btn>
                 </div>
             </v-card-actions>
         </v-form>

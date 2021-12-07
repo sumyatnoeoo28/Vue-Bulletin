@@ -1,6 +1,10 @@
 .login-title {
-  background: #1976d2;
-  color: #ffffff;
+  background: #E1F5FE;
+  color: #81D4FA;
+}
+
+.text-center {
+  margin-left:120px;
 }
 
 .login-input {

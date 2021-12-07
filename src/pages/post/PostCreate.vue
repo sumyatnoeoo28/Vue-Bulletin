@@ -18,8 +18,8 @@
             <v-card-actions>
                 <div class="login-action">
                     <v-spacer></v-spacer>
-                    <v-btn type="submit" :disabled="!valid" large color="primary" class="mr-4">Create</v-btn>
-                    <v-btn large color="primary" @click="cancelPost">Cancel</v-btn>
+                    <v-btn type="submit" :disabled="!valid" large color="light-blue lighten-5" class="mr-4">Create</v-btn>
+                    <v-btn large color="deep-orange accent-4" @click="cancelPost">Cancel</v-btn>
                 </div>
             </v-card-actions>
         </v-form>

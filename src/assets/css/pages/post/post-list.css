@@ -1,4 +1,4 @@
-.filter-bar {
+/* .filter-bar {
   padding: 0px 10px;
 }
 
@@ -11,9 +11,15 @@ text-decoration: none;
 }
 
 .operation-btn {
-  margin: 5px;
+  margin: 500px;
 }
 
 .detail-row {
 height: 30px;
+} */
+ .filter-bar {
+  margin-bottom:50px !important;
+}
+a {
+  color:black !important;
 }

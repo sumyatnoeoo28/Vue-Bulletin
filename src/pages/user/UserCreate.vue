@@ -34,12 +34,26 @@
                     <v-text-field v-model="dob" type="date" label="DOB" :rules="dobRules" hide-details="auto">
                     </v-text-field>
                 </div>
+                <div class="login-input">
+                    <v-file-input
+                    type="file"
+                    :rules="profileRules"
+                    accept="image/png, image/jpeg, image/bmp"
+                    placeholder="Pick an avatar"
+                    prepend-icon="mdi-camera"
+                    label="Avatar"
+                    v-model="profile_path"
+                    v-on:change="saveProfilePicture(profile_path)"
+                  >
+                  </v-file-input>
+                  <img id="output" width="100" heigth="100"/>
+                </div>
             </v-card-text>
             <v-card-actions>
                 <div class="login-action">
                     <v-spacer></v-spacer>
-                    <v-btn type="submit" large color="primary" class="mr-4">Create</v-btn>
-                    <v-btn large color="primary" @click="cancelUser">Cancel</v-btn>
+                    <v-btn type="submit" large color="light-blue lighten-5" class="mr-4">Create</v-btn>
+                    <v-btn large color="deep-orange accent-4" @click="cancelUser">Cancel</v-btn>
                 </div>
             </v-card-actions>
         </v-form>

@@ -10,6 +10,7 @@ export default {
             address: "",
             dob: "",
             searchUser: "",
+            isDetailDialog: false,
             isDeleteDialog: false,
             headerList: [
                 {
@@ -133,6 +134,21 @@ export default {
                 .catch((err) => {
                     console.log(err);
                 });
+        },
+        /**
+         * This is to set user item for user detail dialog.
+         * @param {object} item item (id, name, email, created_user, phone, address, dob)
+         * @returns void
+         */
+        showDetail(item) {
+            this.isDetailDialog = true;
+            this.id = item.id;
+            this.name = item.name;
+            this.email = item.email;
+            this.created_user = item.created_user;
+            this.phone = item.phone;
+            this.address = item.address;
+            this.dob = item.dob;
         },
         /**
          * This is to set user item and then to route to user edit form.

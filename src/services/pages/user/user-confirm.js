@@ -7,8 +7,24 @@ export default {
         phone: "",
         address: "",
         dob: "",
+        profile_path: [],
         error: ""
     }),
+    props: ["data"],
+    created() {
+        this.profile_path = this.$route.params.data;
+        // if (this.profile_path) {
+        //     console.log(this.profile_path);
+        //     var reader = new FileReader();
+            
+        //     reader.onload = function(e) {
+        //         var preview = document.getElementById('preview');
+        //         preview.src = e.target.result;
+        //     }
+            
+        //     reader.readAsDataURL(this.profile_path); // convert to base64 string
+        //   }
+    },
     computed: {
         ...mapGetters(["createUser"])
     },

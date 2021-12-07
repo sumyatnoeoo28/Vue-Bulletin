@@ -7,6 +7,7 @@ export default {
             description: "",
             created_user: "",
             search: "",
+            isDetailDialog: false,
             isDeleteDialog: false,
             headerList: [
                 {
@@ -130,6 +131,18 @@ export default {
                 .catch((err) => {
                     console.log(err);
                 });
+        },
+        /**
+         * This is to set post item for post detail dialog.
+         * @param {object} item item (id, title, description, created_user)
+         * @returns void
+         */
+        showDetail(item) {
+            this.isDetailDialog = true;
+            this.id = item.id;
+            this.title = item.title;
+            this.description = item.description;
+            this.created_user = item.created_user;
         },
         /**
          * This is to set post item and then to route to post edit form.

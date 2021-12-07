@@ -21,8 +21,8 @@
                 </v-row>
                 <v-row>
                     <v-col cols="12" class="text-center">
-                        <v-btn type="submit" large color="primary" class="mr-4">Update</v-btn>
-                        <v-btn large color="primary" @click="cancelEditPost(editPost)">Cancel</v-btn>
+                        <v-btn type="submit" large color="light-blue lighten-5" class="mr-4">Update</v-btn>
+                        <v-btn large color="deep-orange accent-4" @click="cancelEditPost(editPost)">Cancel</v-btn>
                     </v-col>
                 </v-row>
             </v-container>
